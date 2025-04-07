@@ -22,8 +22,6 @@ namespace BackEnd.APIs
             httpRequest.Content = new StringContent("{ \r\n'Enterprise': 'magma3teste',\r\n   'Login': 'suporte',\r\n  'Password': 'magma@api@suporte'\r\n}",
                  Encoding.UTF8,
         "application/json");
-
-
             HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(httpRequest);
             string secondendpoint = "https://api.magma-3.com/v2/Force1/GetAssets?pagination=0&assetType=computador";
             Uri seconduri = new Uri(secondendpoint);
