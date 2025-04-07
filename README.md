@@ -24,3 +24,15 @@ Principais funcionalidades:
 
 ## 📂 Estrutura do Projeto
 
+TesteTecnicoMagma/
+├── TesteTecnicoMagma.API/           # API principal (Controllers, Configurações)
+│   ├── Controllers/                  # Endpoints HTTP
+│   ├── DTOs/                         # Data Transfer Objects
+│   ├── Middlewares/                  # Tratamento de exceções, autenticação, etc.
+│   ├── Program.cs                    # Configuração e inicialização da aplicação
+├── TesteTecnicoMagma.Entities/       # Definições das entidades
+├── TesteTecnicoMagma.Services/       # Lógica de negócio (Service Layer)
+├── TesteTecnicoMagma.Data/            # Acesso ao MongoDB (Repositórios e Contextos)
+└── README.md                          # Este arquivo maravilhoso que você está lendo
+
+
