@@ -14,8 +14,10 @@ namespace BackEnd.Service
 
             List<DataResponseAPI> MaquinasFiltradas = new List<DataResponseAPI>();
 
+            int Index = responseAPI.data.Count(); 
 
-            for (int i = 0; i < responseAPI.data.Count(); i++)
+
+            for (int i = 0; i < Index; i++)
             {
 
                 DateTimeOffset dateTimeOffset = DateTimeOffset.Parse(responseAPI.data[i].UltimaComunicaoMaquina);
