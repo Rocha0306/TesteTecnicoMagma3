@@ -28,11 +28,11 @@ namespace BackEnd.Infrastructure
             string TokenKey = appSettings.GetValue<string>("TokenKey"); 
             string Issuer = "Auth"; //Conteudo do Token - Issuer
             string Audience = "Client"; //Quem consome o token
-            DateTime Expires = DateTime.Now.AddMinutes(10); //Date Time - Expiration - Expiração do Token
-            DateTime NotBefore = DateTime.Now.AddMilliseconds(1); //NotBefore - Tempo que o token não é considerado 
+            //DateTime Expires = DateTime.Now.AddMinutes(10); //Date Time - Expiration - Expiração do Token
+            //DateTime NotBefore = DateTime.Now.AddMilliseconds(1); //NotBefore - Tempo que o token não é considerado 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(TokenKey));
             SigningCredentials signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            securityToken = jwtSecurityTokenHandler.CreateJwtSecurityToken(Issuer, Audience, null, NotBefore, Expires, null, signingCredentials);
+            securityToken = jwtSecurityTokenHandler.CreateJwtSecurityToken(Issuer, Audience, null, null, null, null, signingCredentials);
             return jwtSecurityTokenHandler.WriteToken(securityToken);
 
         }

@@ -25,7 +25,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseRouting();
-app.MapControllers(); 
+app.MapControllers();
+app.UseMiddleware<AuthMiddleware>();
 app.UseMiddleware<ExceptionalHandler>();
 
 app.Run();
