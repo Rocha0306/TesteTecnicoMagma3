@@ -20,7 +20,7 @@ namespace BackEnd.Infrastructure
 
         {
 
-            string TokenKey = "lorinho, seu amiguinho";
+            string TokenKey = "b2b1e54f9a6b4a25a36c5a7c8f07e3184a30be5d66db468dcbb8de3a57fa0d4e";
             string Issuer = "Auth"; //Conteudo do Token - Issuer
             string Audience = "Client"; //Quem consome o token
             //DateTime Expires = DateTime.Now.AddMinutes(10); //Date Time - Expiration - Expiração do Token
