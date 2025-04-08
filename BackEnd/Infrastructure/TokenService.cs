@@ -13,19 +13,14 @@ namespace BackEnd.Infrastructure
 
         public JwtSecurityTokenHandler jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
 
-        private readonly IConfiguration appSettings;
 
-        public TokenService(IConfiguration configuration)
-        {
-            appSettings = configuration; 
-        }
 
 
         public string GeneratorToken()
 
         {
 
-            string TokenKey = appSettings.GetValue<string>("TokenKey"); 
+            string TokenKey = "lorinho, seu amiguinho";
             string Issuer = "Auth"; //Conteudo do Token - Issuer
             string Audience = "Client"; //Quem consome o token
             //DateTime Expires = DateTime.Now.AddMinutes(10); //Date Time - Expiration - Expiração do Token

@@ -28,7 +28,6 @@ namespace BackEnd.Service
             UsersEntity usersEntity = new UsersEntity();
             mapper.Map(usersDTO, usersEntity);
             var responsedatabase = repository.FindUsers(usersEntity);
-            Console.WriteLine("teste");
 
             if (responsedatabase == null)
             {
