@@ -25,7 +25,7 @@ namespace BackEnd.Controllers
         public async Task<ActionResult> Index()
         {
             var response = await force1API.PegaAtivos();
-            //var Maquinas = serviceFiltro.FiltroMaquinas(response);
+            var Maquinas = serviceFiltro.FiltroMaquinas(response);
             return Ok(response.ToJson()); 
         }
     }
