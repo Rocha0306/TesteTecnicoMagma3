@@ -28,7 +28,7 @@ namespace BackEnd.Service
                     MaquinasFiltradas.Add(responseAPI.data[i]);
                 }
 
-                else if (analise == 0)
+                if(analise == 0)
                 {
                     MaquinasFiltradas.Add(responseAPI.data[i]);
                 }

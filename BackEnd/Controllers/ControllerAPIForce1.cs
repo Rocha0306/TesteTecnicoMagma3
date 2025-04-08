@@ -26,7 +26,7 @@ namespace BackEnd.Controllers
         {
             var response = await force1API.PegaAtivos();
             var Maquinas = serviceFiltro.FiltroMaquinas(response);
-            return Ok(response.ToJson()); 
+            return Ok(Maquinas.ToJson()); 
         }
     }
 }
