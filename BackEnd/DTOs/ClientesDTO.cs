@@ -1,10 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace BackEnd.DTOs
 {
     public class ClientesDTO
     {
-        public string Id = Guid.NewGuid().ToString();   
+        [Required(ErrorMessage = "Id necessario")]
+        
+        public string Id {get; set; }   
 
         public string Nome { get; set; }
         [EmailAddress]

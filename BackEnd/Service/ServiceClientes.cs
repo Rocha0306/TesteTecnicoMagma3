@@ -18,6 +18,16 @@ namespace BackEnd.Service
         public Entities.ClientesEntity AddClientes(DTOs.ClientesDTO clientesDTO)
         {
             Entities.ClientesEntity clientesEntity = new Entities.ClientesEntity();
+
+            if (clientesDTO.Id == null)
+            {
+                throw new BadHttpRequestException("Id Nulo");
+            }
+
+            if (clientesDTO.Id.Equals(""))
+            {
+                throw new BadHttpRequestException("Id Vazio");
+            }
             mapper.Map(clientesDTO, clientesEntity);
             var clientedatabase = repository.EncontraCliente(clientesEntity); 
             if(clientesEntity.Equals(clientedatabase))
