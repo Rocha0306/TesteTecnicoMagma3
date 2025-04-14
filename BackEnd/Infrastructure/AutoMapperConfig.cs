@@ -9,7 +9,7 @@ namespace BackEnd.Infrastructure
 
         public AutoMapperConfig() {
             CreateMap<UsersDTO, UsersEntity>();
-            CreateMap<ClientesEntity, ClientesEntity>();
+            CreateMap<ClientesDTO, ClientesEntity>();
             CreateMap<ProdutoDTO, ProdutoEntity>(); 
      
         

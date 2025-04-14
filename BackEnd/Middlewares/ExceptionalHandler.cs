@@ -16,7 +16,7 @@ namespace BackEnd.Middlewares
 
         public async Task Invoke(HttpContext context)
         {
-            var response = context.Response; 
+            var response = context.Response;
 
             try
             {
@@ -34,7 +34,7 @@ namespace BackEnd.Middlewares
 
             catch (BadHttpRequestException ex)
             {
-                exceptionDTO.Message = ex.Message; 
+                exceptionDTO.Message = ex.Message;
                 exceptionDTO.StatusErrorCode = 400;
                 response.ContentType = "application/json";
                 response.StatusCode = exceptionDTO.StatusErrorCode;
@@ -42,6 +42,24 @@ namespace BackEnd.Middlewares
             }
 
             catch (MongoWriteException ex)
+            {
+                exceptionDTO.Message = "já ta no banco esse registro que se tá tentando inserir";
+                exceptionDTO.StatusErrorCode = 400;
+                response.ContentType = "application/json";
+                response.StatusCode = exceptionDTO.StatusErrorCode;
+                await response.WriteAsJsonAsync(exceptionDTO);
+            }
+
+            catch (MongoBulkWriteException)
+            {
+                exceptionDTO.Message = "já ta no banco esse registro que se tá tentando inserir";
+                exceptionDTO.StatusErrorCode = 400;
+                response.ContentType = "application/json";
+                response.StatusCode = exceptionDTO.StatusErrorCode;
+                await response.WriteAsJsonAsync(exceptionDTO);
+            }
+
+            catch (MongoDuplicateKeyException)
             {
                 exceptionDTO.Message = "já ta no banco esse registro que se tá tentando inserir";
                 exceptionDTO.StatusErrorCode = 400;
